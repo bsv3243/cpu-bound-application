@@ -21,15 +21,14 @@ public class HashController {
 
     @RequestMapping("/hello")
     public String hello() {
-        return "hello";
+        return "hello deploy";
     }
 
     private String getMD5Digest(String input) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("MD5");
         md.update(input.getBytes());
         byte[] digest = md.digest();
-        String myHash = DatatypeConverter
-                .printHexBinary(digest).toUpperCase();
+        String myHash = DatatypeConverter.printHexBinary(digest).toUpperCase();
 
         return myHash;
     }
